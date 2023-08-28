@@ -17,9 +17,9 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
-    socket.on('chat message', (msg) => {
+    socket.on('data', (msg) => {
         console.log('message: ' + msg);
-        io.emit('chat message', msg);
+        io.emit('emiter', msg);
     });
 });
 

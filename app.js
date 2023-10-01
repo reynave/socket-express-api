@@ -3,7 +3,7 @@ const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const port = process.env.PORT || process.env.PORT_LOCAL;
-
+const ip = process.env.IP;
 // app.all('/', (req, res) => {
 //     console.log("Just got a request!")
 //     res.send('Yo! masuk 2')
@@ -25,5 +25,5 @@ io.on('connection', (socket) => {
 
 
 http.listen(port, () => {  
-    console.log(`Socket.IO server running at http://localhost:${port}/`);
+    console.log(`Socket.IO server running at http://${ip}:${port}/`);
 });

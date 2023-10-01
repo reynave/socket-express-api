@@ -24,11 +24,11 @@ http.listen(port, () => {
     var d, n, unique;
    
     console.log(`Socket.IO server running at http://${ip}:${port}/`);
-    setInterval(() => {
-         d = new Date();
-         n = d.toLocaleTimeString();
-         console.log(n, padTo2Digits(d.getDate()));
-    }, 1000);
+    // setInterval(() => {
+    //      d = new Date();
+    //      n = d.toLocaleTimeString();
+    //      console.log(n, padTo2Digits(d.getDate()));
+    // }, 1000);
     const job = schedule.scheduleJob('5 04 23 * * *', function () {
         console.log('The answer to life, the universe, and everything!');
         d = new Date();
